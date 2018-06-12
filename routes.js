@@ -1,30 +1,6 @@
-const routes = module.exports = require('next-routes')()
-
-routes
-.add('search', '/', '/movies/index')
-.add('movies', '/movies', '/movies/movieList')
-.add('movieDetails', '/movieDetails/:id', '/movies/movieDetails')
-
-////////////////////////////////////////////////////////////
-//Source: https://github.com/BDav24/next-url-prettifier
-////////////////////////////////////////////////////////////
-// const UrlPrettifier = require('next-url-prettifier').default;
-
-// const routes = [
-//   {
-//     page: 'index',
-//     prettyUrl: '/'
-//   },
-//   {
-//     page: 'movies/movieList',
-//     prettyUrl: '/movies'
-//   },
-//   {
-//     page: 'movies/movieDetails',
-//     prettyUrl: '/movieDetails/:id'
-//   }
-// ];
-
-// const urlPrettifier = new UrlPrettifier(routes);
-// exports.default = routes;
-// exports.Router = urlPrettifier;
+// TODO: split this object up into three: one for for routes with 1 param, 2params, and 3 params. Then change routing function to use the correct obj depending on the num of params
+export const translationObj = {
+    movies: { page: '/movies', type: 'movies'},
+    movielist: { page: '/movies/movieList', id: { default: '' } },
+    // movieDetails: { page: '/movies/movieList', id: { id: ':id' }},
+  }

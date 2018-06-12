@@ -7,12 +7,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
 
-// TODO: split this object up into three: one for for routes with 1 param, 2params, and 3 params. Then change routing function to use the correct obj depending on the num of params
-const translationObj = {
-  movies: { page: '/movies', type: 'movies'},
-  movielist: { page: '/movies/movieList', id: { default: '' } },
-  // movieDetails: { page: '/movies/movieList', id: { id: ':id' }},
-}
+import { translationObj } from "./routes.js";
 
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
@@ -241,103 +236,3 @@ function renderAndCache (req, res, pagePath, queryParams) {
       app.renderError(err, req, res, pagePath, queryParams)
     })
 }
-
-// const express = require('express')
-// const next = require('next')
-
-// // Set dev to true if not production
-// const dev = process.env.NODE_ENV !== 'production'
-// // Tell next whether to run in dev mode
-// const app = next({ dev })
-// const handle = app.getRequestHandler()
-
-// app.prepare()
-// .then(() => {
-//   const server = express()
-
-//   server.get('/', (req, res) => {
-//     const pathname = '/movies'
-//     app.render(req, res, pathname, req.query)
-//   })
-
-//   server.get('/movies/:id', (req, res) => {
-//     const pathname = '/movies/movieList'
-//     const queryParams = { id: req.params.id }
-//     app.render(req, res, pathname, queryParams)
-//   })
-
-//   server.get('/movieDetails/:id', (req, res) => {
-//     const pathname = '/movies/movieDetails'
-//     const queryParams = { id: req.params.id }
-//     app.render(req, res, pathname, queryParams)
-//   })
-
-//   server.get('*', (req, res) => {
-//     return handle(req, res)
-//   })
-
-//   server.listen(3000, (err) => {
-//     if (err) throw err
-//     console.log('> Ready on http://localhost:3000')
-//   })
-// })
-// .catch((ex) => {
-//   console.error(ex.stack)
-//   process.exit(1)
-// })
-
-// // server.js
-// const express = require('express');
-// const next = require('next');
-// const Router = require('./routes').Router;
-
-// const dev = process.env.NODE_ENV !== 'production';
-// const port = parseInt(process.env.PORT, 10) || 3000;
-// const app = next({dev});
-// const handle = app.getRequestHandler();
-
-// app.prepare()
-//   .then(() => {
-//     const server = express();
-
-//     Router.forEachPattern((page, pattern, defaultParams) => server.get(pattern, (req, res) =>
-//       app.render(req, res, `/${page}`, Object.assign({}, defaultParams, req.query, req.params))
-//     ));
-
-//     server.get('*', (req, res) => handle(req, res));
-//     server.listen(port);
-//   })
-// ;
-
-// // server.js
-// const next = require('next')
-// // With express
-// const express = require('express')
-// const routes = require('./routes')
-// const app = next({dev: process.env.NODE_ENV !== 'production'})
-// const handler = routes.getRequestHandler(app)
-
-
-// app.prepare().then(() => {
-  
-//   const server = express();
-
-//   // create router from express
-//   const router = express.Router();
-
-//   server.get('/p', (req, res) => {
-//     app.render(req, res, '/movies/mock', req.query);
-//   });
-
-//   server.use('/mocks', express.static(__dirname + '/mocks'));
-  
-//   server.use(handler)
-  
-//   server.use((req, res, next) => {
-//     if(res.status === 404){
-//       return app.render(req, res, '/Errors/NotFound', req.query);
-//     }
-//   })
-  
-//   server.listen(3000)
-// })
