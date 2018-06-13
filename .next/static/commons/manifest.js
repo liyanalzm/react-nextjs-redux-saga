@@ -90,7 +90,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a173015f8c752fa9a2a3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "219f3bc5d5c8f4598870"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -755,7 +755,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles\\pages\\_app.js","2":"bundles\\pages\\_error.js","4":"bundles\\pages\\movies\\movieList.js"}[chunkId]||chunkId) + "-" + {"0":"93a0d0a0ebbc4de57e25","1":"b22f83f43cf8179ce855","2":"2f8231705bd0832d2e88","4":"6acf734d3a7d68a29553"}[chunkId] + ".js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"main.js","1":"bundles\\pages\\_app.js","2":"bundles\\pages\\_error.js","4":"chunks/pages_movies_templates_movieDetails_2efee32c931e29ee846b1e82f7e4a3a8","5":"bundles\\pages\\movies\\movieDetails.js","7":"bundles\\pages\\movies\\movieList.js"}[chunkId]||chunkId) + "-" + {"0":"93a0d0a0ebbc4de57e25","1":"14ff09056ac935d6bb6d","2":"2f8231705bd0832d2e88","4":"85dce3ce1a9532855fa6","5":"8deeeeaa144e90e8fd5b","7":"8c2c0fd3a7108ec1167b"}[chunkId] + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {

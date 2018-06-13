@@ -91,7 +91,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_next_redux_saga__ = __webpack_require__("next-redux-saga");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_next_redux_saga___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_next_redux_saga__);
 
-var _jsxFileName = "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\_app.js";
+var _jsxFileName = "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\_app.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -216,10 +216,10 @@ function (_App) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return actionTypes; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = failure;
 /* unused harmony export submitForm */
-/* harmony export (immutable) */ __webpack_exports__["c"] = loadData;
-/* unused harmony export getData */
+/* harmony export (immutable) */ __webpack_exports__["d"] = loadData;
+/* harmony export (immutable) */ __webpack_exports__["c"] = getData;
 /* unused harmony export getSearchData */
-/* harmony export (immutable) */ __webpack_exports__["d"] = loadDataSuccess;
+/* harmony export (immutable) */ __webpack_exports__["e"] = loadDataSuccess;
 /* unused harmony export getDataSuccess */
 /* unused harmony export startClock */
 /* unused harmony export tickClock */
@@ -445,7 +445,7 @@ function loadDataSaga(search) {
         case 9:
           results = _context.sent;
           _context.next = 12;
-          return Object(__WEBPACK_IMPORTED_MODULE_2_redux_saga_effects__["put"])(Object(__WEBPACK_IMPORTED_MODULE_5__actions_js__["d" /* loadDataSuccess */])(results));
+          return Object(__WEBPACK_IMPORTED_MODULE_2_redux_saga_effects__["put"])(Object(__WEBPACK_IMPORTED_MODULE_5__actions_js__["e" /* loadDataSuccess */])(results));
 
         case 12:
           _context.next = 18;

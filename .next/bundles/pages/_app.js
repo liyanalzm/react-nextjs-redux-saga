@@ -8115,7 +8115,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store__ = __webpack_require__("./store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_next_redux_saga__ = __webpack_require__("./node_modules/next-redux-saga/dist/next-redux-saga.es.js");
 
-var _jsxFileName = "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\_app.js";
+var _jsxFileName = "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\_app.js";
 
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
@@ -8256,8 +8256,8 @@ var _default = __WEBPACK_IMPORTED_MODULE_4_next_redux_wrapper___default()(__WEBP
     return;
   }
 
-  reactHotLoader.register(MyApp, "MyApp", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\_app.js");
-  reactHotLoader.register(_default, "default", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\_app.js");
+  reactHotLoader.register(MyApp, "MyApp", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\_app.js");
+  reactHotLoader.register(_default, "default", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\_app.js");
   leaveModule(module);
 })();
 
@@ -8291,10 +8291,10 @@ var _default = __WEBPACK_IMPORTED_MODULE_4_next_redux_wrapper___default()(__WEBP
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return actionTypes; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = failure;
 /* unused harmony export submitForm */
-/* harmony export (immutable) */ __webpack_exports__["c"] = loadData;
-/* unused harmony export getData */
+/* harmony export (immutable) */ __webpack_exports__["d"] = loadData;
+/* harmony export (immutable) */ __webpack_exports__["c"] = getData;
 /* unused harmony export getSearchData */
-/* harmony export (immutable) */ __webpack_exports__["d"] = loadDataSuccess;
+/* harmony export (immutable) */ __webpack_exports__["e"] = loadDataSuccess;
 /* unused harmony export getDataSuccess */
 /* unused harmony export startClock */
 /* unused harmony export tickClock */
@@ -8382,16 +8382,16 @@ function tickClock(isServer) {
     return;
   }
 
-  reactHotLoader.register(actionTypes, "actionTypes", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
-  reactHotLoader.register(failure, "failure", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
-  reactHotLoader.register(submitForm, "submitForm", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
-  reactHotLoader.register(loadData, "loadData", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
-  reactHotLoader.register(getData, "getData", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
-  reactHotLoader.register(getSearchData, "getSearchData", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
-  reactHotLoader.register(loadDataSuccess, "loadDataSuccess", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
-  reactHotLoader.register(getDataSuccess, "getDataSuccess", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
-  reactHotLoader.register(startClock, "startClock", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
-  reactHotLoader.register(tickClock, "tickClock", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(actionTypes, "actionTypes", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(failure, "failure", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(submitForm, "submitForm", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(loadData, "loadData", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(getData, "getData", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(getSearchData, "getSearchData", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(loadDataSuccess, "loadDataSuccess", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(getDataSuccess, "getDataSuccess", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(startClock, "startClock", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
+  reactHotLoader.register(tickClock, "tickClock", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\actions.js");
   leaveModule(module);
 })();
 
@@ -8521,9 +8521,9 @@ var _default = reducer;
     return;
   }
 
-  reactHotLoader.register(exampleInitialState, "exampleInitialState", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\reducer.js");
-  reactHotLoader.register(reducer, "reducer", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\reducer.js");
-  reactHotLoader.register(_default, "default", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\reducer.js");
+  reactHotLoader.register(exampleInitialState, "exampleInitialState", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\reducer.js");
+  reactHotLoader.register(reducer, "reducer", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\reducer.js");
+  reactHotLoader.register(_default, "default", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\reducer.js");
   leaveModule(module);
 })();
 
@@ -8618,7 +8618,7 @@ function loadDataSaga(search) {
         case 9:
           results = _context.sent;
           _context.next = 12;
-          return Object(__WEBPACK_IMPORTED_MODULE_2_redux_saga_effects__["d" /* put */])(Object(__WEBPACK_IMPORTED_MODULE_5__actions_js__["d" /* loadDataSuccess */])(results));
+          return Object(__WEBPACK_IMPORTED_MODULE_2_redux_saga_effects__["d" /* put */])(Object(__WEBPACK_IMPORTED_MODULE_5__actions_js__["e" /* loadDataSuccess */])(results));
 
         case 12:
           _context.next = 18;
@@ -8744,10 +8744,10 @@ function movieSaga() {
     return;
   }
 
-  reactHotLoader.register(loadDataSaga, "loadDataSaga", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\saga.js");
-  reactHotLoader.register(searchData, "searchData", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\saga.js");
-  reactHotLoader.register(getDataSaga, "getDataSaga", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\saga.js");
-  reactHotLoader.register(movieSaga, "movieSaga", "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\saga.js");
+  reactHotLoader.register(loadDataSaga, "loadDataSaga", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\saga.js");
+  reactHotLoader.register(searchData, "searchData", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\saga.js");
+  reactHotLoader.register(getDataSaga, "getDataSaga", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\saga.js");
+  reactHotLoader.register(movieSaga, "movieSaga", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\saga.js");
   leaveModule(module);
 })();
 
@@ -8838,10 +8838,10 @@ var _default = configureStore;
     return;
   }
 
-  reactHotLoader.register(sagaMiddleware, "sagaMiddleware", "C:\\Users\\theoc\\Documents\\with-redux-saga\\store\\index.js");
-  reactHotLoader.register(bindMiddleware, "bindMiddleware", "C:\\Users\\theoc\\Documents\\with-redux-saga\\store\\index.js");
-  reactHotLoader.register(configureStore, "configureStore", "C:\\Users\\theoc\\Documents\\with-redux-saga\\store\\index.js");
-  reactHotLoader.register(_default, "default", "C:\\Users\\theoc\\Documents\\with-redux-saga\\store\\index.js");
+  reactHotLoader.register(sagaMiddleware, "sagaMiddleware", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\store\\index.js");
+  reactHotLoader.register(bindMiddleware, "bindMiddleware", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\store\\index.js");
+  reactHotLoader.register(configureStore, "configureStore", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\store\\index.js");
+  reactHotLoader.register(_default, "default", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\store\\index.js");
   leaveModule(module);
 })();
 
@@ -8907,8 +8907,8 @@ var _default = rootSaga;
     return;
   }
 
-  reactHotLoader.register(rootSaga, "rootSaga", "C:\\Users\\theoc\\Documents\\with-redux-saga\\store\\saga.js");
-  reactHotLoader.register(_default, "default", "C:\\Users\\theoc\\Documents\\with-redux-saga\\store\\saga.js");
+  reactHotLoader.register(rootSaga, "rootSaga", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\store\\saga.js");
+  reactHotLoader.register(_default, "default", "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\store\\saga.js");
   leaveModule(module);
 })();
 

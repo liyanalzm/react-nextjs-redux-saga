@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -80,7 +80,7 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js__ = __webpack_require__("./routes.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__routes_js__);
-var _jsxFileName = "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\Errors\\NoResults.js";
+var _jsxFileName = "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\Errors\\NoResults.js";
 
 
 
@@ -120,7 +120,7 @@ var NotFound = function NotFound(_ref) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\Errors\\SomethingWrong.js";
+var _jsxFileName = "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\Errors\\SomethingWrong.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -196,10 +196,10 @@ function (_React$Component) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return actionTypes; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = failure;
 /* unused harmony export submitForm */
-/* harmony export (immutable) */ __webpack_exports__["c"] = loadData;
-/* unused harmony export getData */
+/* harmony export (immutable) */ __webpack_exports__["d"] = loadData;
+/* harmony export (immutable) */ __webpack_exports__["c"] = getData;
 /* unused harmony export getSearchData */
-/* harmony export (immutable) */ __webpack_exports__["d"] = loadDataSuccess;
+/* harmony export (immutable) */ __webpack_exports__["e"] = loadDataSuccess;
 /* unused harmony export getDataSuccess */
 /* unused harmony export startClock */
 /* unused harmony export tickClock */
@@ -289,7 +289,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates_movieList__ = __webpack_require__("./pages/movies/templates/movieList.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__actions__ = __webpack_require__("./pages/movies/actions.js");
 
-var _jsxFileName = "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\movieList.js";
+var _jsxFileName = "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\movieList.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -325,7 +325,7 @@ var MovieListDynamic = __WEBPACK_IMPORTED_MODULE_3_next_dynamic___default()(new 
     try {
       var m = __webpack_require__("./pages/movies/templates/movieList.js");
 
-      m.__webpackChunkName = 'pages_movies_templates_movieList_3fd33de399a5065e392aac4d2c8e6e68';
+      m.__webpackChunkName = 'pages_movies_templates_movieList_c259ab86f742c1ada1f2de86e070fa40';
       resolve(m);
     } catch (error) {
       reject(error);
@@ -388,7 +388,7 @@ function (_React$Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 _props$ctx = props.ctx, store = _props$ctx.store, query = _props$ctx.query;
-                store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_5__actions__["c" /* loadData */])(query.id));
+                store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_5__actions__["d" /* loadData */])(query.id));
 
               case 2:
               case "end":
@@ -425,7 +425,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Errors_NoResults__ = __webpack_require__("./pages/Errors/NoResults.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Errors_SomethingWrong__ = __webpack_require__("./pages/Errors/SomethingWrong.js");
-var _jsxFileName = "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\\templates\\movieList.js";
+var _jsxFileName = "C:\\Users\\theoc\\Documents\\Factoring\\react-nextjs-redux-saga\\pages\\movies\\templates\\movieList.js";
 // import {Link} from 'next-url-prettifier';
 // import { Link, Router } from '../../../routes.js';
 
@@ -460,7 +460,7 @@ var _jsxFileName = "C:\\Users\\theoc\\Documents\\with-redux-saga\\pages\\movies\
         lineNumber: 16
       }
     }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_next_link___default.a, {
-      href: "/movieDetails/".concat(show.id),
+      href: "/movies/desc?id=".concat(show.id),
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
@@ -493,35 +493,26 @@ var mocktemplate = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("
 /***/ }),
 
 /***/ "./routes.js":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var routes = module.exports = __webpack_require__("next-routes")();
-
-routes.add('search', '/', '/movies/index').add('movies', '/movies', '/movies/movieList').add('movieDetails', '/movieDetails/:id', '/movies/movieDetails'); ////////////////////////////////////////////////////////////
-//Source: https://github.com/BDav24/next-url-prettifier
-////////////////////////////////////////////////////////////
-// const UrlPrettifier = require('next-url-prettifier').default;
-// const routes = [
-//   {
-//     page: 'index',
-//     prettyUrl: '/'
-//   },
-//   {
-//     page: 'movies/movieList',
-//     prettyUrl: '/movies'
-//   },
-//   {
-//     page: 'movies/movieDetails',
-//     prettyUrl: '/movieDetails/:id'
-//   }
-// ];
-// const urlPrettifier = new UrlPrettifier(routes);
-// exports.default = routes;
-// exports.Router = urlPrettifier;
+// TODO: split this object up into three: one for for routes with 1 param, 2params, and 3 params. Then change routing function to use the correct obj depending on the num of params
+var routes = [{
+  page: '/Errors/NotFound'
+}, {
+  path: '/movies',
+  page: '/movies'
+}, {
+  path: '/movies/list',
+  page: '/movies/movieList'
+}, {
+  path: '/movies/desc',
+  page: '/movies/movieDetails'
+}];
+module.exports = routes;
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/movies/movieList.js");
@@ -533,13 +524,6 @@ module.exports = __webpack_require__("./pages/movies/movieList.js");
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/regenerator");
-
-/***/ }),
-
-/***/ "next-routes":
-/***/ (function(module, exports) {
-
-module.exports = require("next-routes");
 
 /***/ }),
 

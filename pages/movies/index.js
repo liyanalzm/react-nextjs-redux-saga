@@ -17,7 +17,7 @@ class Movies extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    Router.push(`/movies/${this.refs.search.value}`)
+    Router.push(`/movies/list?id=${this.refs.search.value}`)
   }
   
 

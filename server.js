@@ -1,3 +1,5 @@
+const { createServer } = require('http')
+const { parse } = require('url')
 const express = require('express')
 const next = require('next')
 const LRUCache = require('lru-cache')
@@ -7,7 +9,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
 
-import { translationObj } from "./routes.js";
+const routes =  require("./routes.js");
 
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
@@ -16,192 +18,45 @@ const ssrCache = new LRUCache({
 })
 
 app.prepare().then(() => {
-  const server = express()
+  // const server = express()
+
+  createServer((req, res) => {
+    // Be sure to pass `true` as the second argument to `url.parse`.
+    // This tells it to parse the query portion of the URL.
+    const parsedUrl = parse(req.url, true)
+    const { pathname, query } = parsedUrl
+
+    let routeFound = false;
+    routes.map((route, index) => {
+      if(route.path === pathname){
+        routeFound = true;
+        app.render(req, res, route.page, query);
+      }
+    })
+
+    if(!routeFound){
+      app.render(req, res, routes[0].page, query);
+    }
+
+  }).listen(3000, err => {
+    if (err) throw err
+    console.log('> Ready on http://localhost:3000')
+  })
 
   // Use the `renderAndCache` utility defined below to serve pages
-  server.get('/', (req, res) => renderAndCache(req, res, '/'))
+  // server.get('/', (req, res) => renderAndCache(req, res, '/'))
 
-  server.get('/:first/:second?/:third?', (req, res, next) => {
-    const firstParam = req.params.first ? req.params.first.toLowerCase() : null
-    const secondParam = req.params.second
-      ? req.params.second.toLowerCase()
-      : null
-    const thirdParam = req.params.third ? req.params.third.toLowerCase() : null
-    // Prevent routes that should not be handled by this logic and send them to the next route in line
-    if (
-      firstParam !== '_next' &&
-      firstParam !== 'robots.txt' &&
-      firstParam !== 'service-worker.js' &&
-      firstParam !== 'favicon.ico' &&
-      firstParam !== 'static' &&
-      firstParam !== 'json'
-    ) {
-      // initialize variables
-      let page = '/page'
-      let type = `${firstParam}Pages`
-      let subtype = null
-      let id = null
-      if (Object.values(req.params).filter(Boolean).length === 1) {
-        // Logic for routes with 1 parameter
-        console.log('one parameter')
-        // Set up default values for routes with 1 parameter
-        page = '/page'
-        type = `${firstParam}Pages`
-        if (translationObj[firstParam]) {
-          // find page
-          if (translationObj[firstParam].page) {
-            if (typeof translationObj[firstParam].page === 'object') {
-              page = translationObj[firstParam].page.default
-            } else {
-              page = translationObj[firstParam].page
-            }
-          }
-          // find type
-          if (translationObj[firstParam].type) {
-            if (typeof translationObj[firstParam].type === 'object') {
-              type = translationObj[firstParam].type.default
-            } else {
-              type = translationObj[firstParam].type
-            }
-          }
-          // find id
-          if (translationObj[firstParam].id) {
-            if (translationObj[firstParam].id.default) {
-              id = translationObj[firstParam].id.default
-            }
-          }
-        }
-      } else if (Object.values(req.params).filter(Boolean).length === 2) {
-        // Logic for routes with 2 parameters
-        console.log('two parameters')
-        // Set up default values for routes with 2 parameters
-        page = '/page'
-        type = `${firstParam}Pages`
-        id = secondParam
-        if (translationObj[firstParam]) {
-          // find page
-          if (translationObj[firstParam].page) {
-            if (typeof translationObj[firstParam].page === 'object') {
-              if (translationObj[firstParam].page[id]) {
-                page = translationObj[firstParam].page[id]
-              } else if (translationObj[firstParam].page.standard) {
-                page = translationObj[firstParam].page.standard
-              } else {
-                page = translationObj[firstParam].page.default
-              }
-            } else {
-              page = translationObj[firstParam].page
-            }
-          }
-          // find type
-          if (translationObj[firstParam].type) {
-            if (typeof translationObj[firstParam].type === 'object') {
-              if (translationObj[firstParam].type[id]) {
-                type = translationObj[firstParam].type[id]
-              } else if (translationObj[firstParam].type.standard) {
-                type = translationObj[firstParam].type.standard
-              } else {
-                type = translationObj[firstParam].type.default
-              }
-            } else {
-              type = translationObj[firstParam].type
-            }
-          }
-          // find id
-          if (translationObj[firstParam].id) {
-            // Check to see if the item has an id array
-            if (typeof translationObj[firstParam].id === 'object') {
-              // If secondParam exists as key in id array
-              if (translationObj[firstParam].id[secondParam]) {
-                // Use value of secondParam key as id
-                id = translationObj[firstParam].id[secondParam]
-              } else if (translationObj[firstParam].id.standard) {
-                // Check that standard exists as a key in id array
-                // Use standard value as id
-                id = translationObj[firstParam].id.standard
-              } else {
-                // If no standard, then use second param as id
-                id = secondParam
-              }
-              // If no id array exists, use the id string as the id
-            } else {
-              id = translationObj[firstParam].id
-            }
-          }
-        }
-      } else if (Object.values(req.params).filter(Boolean).length === 3) {
-        // Logic for routes with 3 parameters
-        console.log('three parameters')
-        // Set up default values for routes with 3 parameters
-        page = '/page'
-        type = `${firstParam}Pages`
-        subtype = secondParam
-        id = thirdParam
-        if (translationObj[firstParam]) {
-          // find page
-          if (translationObj[firstParam].page) {
-            if (typeof translationObj[firstParam].page === 'object') {
-              if (translationObj[firstParam].page[id]) {
-                page = translationObj[firstParam].page[id]
-              } else if (translationObj[firstParam].page.thirdly) {
-                page = translationObj[firstParam].page.thirdly
-              } else {
-                page = translationObj[firstParam].page.default
-              }
-            } else {
-              page = translationObj[firstParam].page
-            }
-          }
-          // find type
-          if (translationObj[firstParam].type) {
-            if (typeof translationObj[firstParam].type === 'object') {
-              if (translationObj[firstParam].type[id]) {
-                type = translationObj[firstParam].type[id]
-              } else if (translationObj[firstParam].type.thirdly) {
-                type = translationObj[firstParam].type.thirdly
-              } else {
-                type = translationObj[firstParam].type.default
-              }
-            } else {
-              type = translationObj[firstParam].type
-            }
-          }
-          // find id
-          if (translationObj[firstParam].id) {
-            // Check to see if the item has an id array
-            if (typeof translationObj[firstParam].id === 'object') {
-              // If secondParam exists as key in id array
-              if (translationObj[firstParam].id[secondParam]) {
-                // Use value of secondParam key as id
-                id = translationObj[firstParam].id[secondParam]
-              } else if (translationObj[firstParam].id.thirdly) {
-                // Check that thirdly exists as a key in id array
-                // Use thirdly value as id
-                id = translationObj[firstParam].id.thirdly
-              } else {
-                // If no thirdly, then use second param as id
-                id = secondParam
-              }
-              // If no id array exists, use the id string as the id
-            } else {
-              id = translationObj[firstParam].id
-            }
-          }
-        }
-      }
-      return renderAndCache(req, res, page, { id, type, subtype })
-    }
-    return next()
-  })
+ //copy and paste a-moment.js
 
-  server.get('*', (req, res) => {
-    return handle(req, res)
-  })
 
-  server.listen(port, err => {
-    if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
-  })
+  // server.get('*', (req, res) => {
+  //   return handle(req, res)
+  // })
+
+  // server.listen(port, err => {
+  //   if (err) throw err
+  //   console.log(`> Ready on http://localhost:${port}`)
+  // })
 })
 
 /*

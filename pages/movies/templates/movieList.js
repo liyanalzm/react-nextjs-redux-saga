@@ -14,7 +14,7 @@ export default function ({ movies, error }) {
         ||
         movies.map(({ show }) => (
         <li key={show.id}>
-          <Link href={`/movieDetails/${show.id}`}>
+          <Link href={`/movies/desc?id=${show.id}`}>
             <a>{show.name}</a>
           </Link>
         </li>
